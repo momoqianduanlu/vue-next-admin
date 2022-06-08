@@ -30,7 +30,7 @@
   </p>
   <button
     type="button"
-    @click="count++"
+    @click="increment"
   >
     count is: {{ count }}
   </button>
@@ -59,6 +59,8 @@ const props = defineProps({
   }
 })
 
+const emits = defineEmits(['increment'])
+
 const count = ref(0)
 const foo = ref<{a:Number, b: String} | null>(null)
 foo.value = {
@@ -66,6 +68,11 @@ foo.value = {
   b: ''
 }
 const titleRef = ref<HTMLHeadElement|null>(null)
+
+const increment = () => {
+  count.value++
+  emits('increment')
+}
 
 onMounted(() => {
   console.log('titleRef', titleRef.value)

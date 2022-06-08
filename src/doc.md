@@ -4,7 +4,7 @@
    执行 "npm run lint" 脚本进行代码eslint检查
 
 2. 使用lint-staged进行代码提交规范eslint检查
-   npx mrm@2 lint-staged  (lint-staged会对git缓存在暂存区里面的代码进行lint验证)
+   npx mrm@2 lint-staged (lint-staged会对git缓存在暂存区里面的代码进行lint验证)
    "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
       "npm run lint",
